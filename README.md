@@ -14,5 +14,5 @@ then
 
 to get views
 
-`node main <channel_id_goes_here>`
+`node main <video_id_goes_here>`
 
