@@ -1,8 +1,8 @@
 const scrape = require('./src/crawler')
 
-try {
+const main = async() => {
     if(process.argv.length < 3){
-        console.log('no website found');
+        console.log('no video id was entered :(');
         process.exit(1);
     }
     if(process.argv.length > 3){
@@ -12,7 +12,14 @@ try {
 
     const id = process.argv[2];
     // const channel = process.argv[3];
-    scrape(id);
-} catch (error) {
-    console.log({error: error.message})
+    try{
+        await scrape(id);
+    }
+    catch(error){
+        const errorMsg = error.message
+        console.log(errorMsg);
+    }
+    return
 }
+
+main()
